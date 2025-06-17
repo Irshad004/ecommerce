@@ -50,7 +50,7 @@ This project contains Kubernetes manifests and instructions to deploy a simulate
    k apply -f backend-deploy.yaml
 
    k apply -f config.yaml
-   
+
    k apply -f secret.yaml
    
    Check the deployment
@@ -93,7 +93,7 @@ This project contains Kubernetes manifests and instructions to deploy a simulate
   curl -H "Host: ecommerce.local" http://a9a639a3ce4ef416f8aa917542929942-db48f10e3bae29d8.elb.us-east-1.amazonaws.com
 
 
-7. Enable secutiry policies:
+7. Enable security policies:
    
    Installing CRDs .
 
