@@ -28,17 +28,19 @@ This project contains Kubernetes manifests and instructions to deploy a simulate
    docker tag backend:v1 irshad04/backend:v1
 
    docker push irshad04/frontendecom:v1
-   
+
    docker push irshad04/backend:v1
 
 2. Create the namespace:
    
    alias k='kubectl'
+
    k create ns ecommerce
    
 
 
 3. Deploy backend and frontend:
+
    k apply -f frontend-deploy.yaml
 
    Check the deployment
@@ -76,7 +78,7 @@ This project contains Kubernetes manifests and instructions to deploy a simulate
    
    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/aws/deploy.yaml
 
-   In /etc/hosts file I have local host ecommere.local with external ip of the ingress nginx controller.
+   In /etc/hosts file I have confugured the local host ecommere.local with external ip of the ingress nginx controller.
 
    k apply -f ingress.yaml
 
