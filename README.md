@@ -15,16 +15,20 @@ This project contains Kubernetes manifests and instructions to deploy a simulate
 ## Deployment Steps
 
 
-1. BUilding and tagging the docker images
+1. Building and tagging the docker images
+
    docker build -t frontendecom:v1 .
+
    docker build -t backend:v1 .
 
    docker login
 
    docker tag frontendecom:v1 irshad04/frontendecom:v1
+
    docker tag backend:v1 irshad04/backend:v1
 
    docker push irshad04/frontendecom:v1
+   
    docker push irshad04/backend:v1
 
 2. Create the namespace:
