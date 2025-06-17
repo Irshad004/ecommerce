@@ -1,0 +1,33 @@
+aws iam create-user --user-name irshad
+aws iam attach-user-policy \
+  --user-name irshad \
+  --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+
+aws iam create-access-key --user-name irshad
+
+
+
+eksctl create cluster \
+  --name ecommerce-cluster \
+  --region us-east-1 \
+  --nodegroup-name linux-nodes \
+  --node-type t3.medium \
+  --nodes 2 \
+  --nodes-min 1 \
+  --nodes-max 2 \
+  --managed
+
+
+eksctl utils associate-iam-oidc-provider \
+  --region us-east-1 \
+  --cluster ecommerce-cluster \
+  --approve
+
+
+eksctl create addon \
+  --cluster ecommerce-cluster \
+  --name aws-ebs-csi-driver \
+  --version latest \
+  --region us-east-1 \
+  --force
+  
